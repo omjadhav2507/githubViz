@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Search from './Components/Search';
 import Profile from './Components/Profile';
+import Repo from './Components/Repo';
 
 const Dashboard = () => {
   const [searchVal, setSearchVal] = useState("");
@@ -11,7 +12,7 @@ const Dashboard = () => {
   }
 
  async function fetchGitData() {
-  const accessToken = process.env.REACT_APP_GITHUB_API_KEY;
+  const accessToken = process.env.REACT_APP_GITHUB_API_KEY
   
   try {
     const res = await fetch(`https://api.github.com/users/${searchVal}`, {
@@ -43,6 +44,8 @@ const Dashboard = () => {
     <>
     <Search onSearch={handleSearch} />
     {userData && <Profile userData={userData} />}
+    {userData && <Repo userData={userData} />}
+
   </>
   );
 }
