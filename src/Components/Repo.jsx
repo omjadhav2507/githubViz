@@ -6,7 +6,7 @@ const Repo = ({ userData }) => {
   useEffect(() => {
     const fetchGitData = async () => {
       try {
-        const accessToken = process.env.process.env.REACT_APP_GITHUB_API_KEY
+        const accessToken = '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'
         
         const res = await fetch(`https://api.github.com/users/${userData.login}/repos`, {
           headers: {
