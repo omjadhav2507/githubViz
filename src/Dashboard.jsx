@@ -13,7 +13,7 @@ const Dashboard = () => {
   }
 
  async function fetchGitData() {
-  const accessToken = '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'
+  const accessToken =process.env.REACT_APP_GITHUB_API_KEY;
   
   try {
     const res = await fetch(`https://api.github.com/users/${searchVal}`, {

@@ -7,7 +7,7 @@ const Technical = ({ userData }) => {
   useEffect(() => {
     const fetchTechnicalInfo = async () => {
       try {
-        const accessToken = "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";
+        const accessToken = process.env.REACT_APP_GITHUB_API_KEY;
         const repoRes = await fetch(
           `https://api.github.com/users/${userData.login}/repos`,
           {
